@@ -1,73 +1,135 @@
-# React + TypeScript + Vite
+# 🌌 3D Interactive Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, interactive 3D developer portfolio showcasing web development skills, experience, achievements, and projects. Built with **React 19**, **TypeScript**, **Vite**, **Three.js / React Three Fiber (R3F)**, **Tailwind CSS v4**, and **Framer Motion**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **3D Skills Sphere**: An interactive, rotating 3D tag cloud rendering technology badges in real-time.
+- **Interactive 3D Globe**: A custom-textured, rotating Earth globe with particle systems to represent global connectivity and projects.
+- **3D Workspace Scene**: Interactive 3D workspace model elements to bring the page to life.
+- **Dynamic Particles**: Interactive mouse-following canvas particles providing a fluid background effect.
+- **Custom 3D Loader**: A custom loading component that handles asset caching and smoothly transitions the scene into view once loaded.
+- **Responsive Layout & Sleek UI**: Designed with glassmorphism, responsive grids, sleek gradients, and subtle animations using Tailwind CSS v4 and Framer Motion.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Core**: [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Vite 8](https://vite.dev/)
+- **3D Rendering**: [Three.js](https://threejs.org/), [@react-three/fiber](https://r3f.docs.pmnd.rs/), [@react-three/drei](https://github.com/pmndrs/drei)
+- **Styling & Theme**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion 12](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Follow these steps to set up the project locally on your machine and run it independently.
+
+### Prerequisites
+
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) (v18.0.0 or higher recommended)
+- `npm` (usually comes with Node.js) or `yarn`/`pnpm`
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/HariomYadav-sudo/3D-portfolio.git
+cd 3D-portfolio
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Install the required node packages defined in `package.json`:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### 3. Run the Development Server
+
+Start the Vite development server with Hot Module Replacement (HMR):
+
+```bash
+npm run dev
+```
+
+By default, the application will run at **`http://localhost:5173`**. Open this URL in your browser to see the live site.
+
+### 4. Build for Production
+
+To build a highly optimized version of the application for production deployment, run:
+
+```bash
+npm run build
+```
+
+This compiles TypeScript, bundles resources, and outputs files to the `dist/` directory.
+
+### 5. Preview Production Build Locally
+
+After building the project, you can preview the production bundle locally:
+
+```bash
+npm run preview
+```
+
+---
+
+## 📂 Project Structure
+
+Here is an overview of the key directories in the project:
+
+```text
+3D-portfolio/
+├── public/                 # Static assets (images, logos, favicon, textures)
+├── src/
+│   ├── assets/             # Images, SVGs, and other local media assets
+│   ├── components/         # React Components
+│   │   ├── 3d/             # Three.js / React Three Fiber components
+│   │   │   ├── GlobeScene.tsx       # Interactive 3D Earth Globe
+│   │   │   ├── MouseParticles.tsx   # Fluid mouse tracker particles
+│   │   │   ├── SkillsSphere.tsx     # Rotating 3D tag sphere
+│   │   │   ├── StarsBackground.tsx  # Dynamic space environment background
+│   │   │   └── WorkspaceScene.tsx   # Hero area workspace model elements
+│   │   ├── About.tsx       # About Me section
+│   │   ├── Achievements.tsx # Milestones & accomplishments
+│   │   ├── Contact.tsx     # Contact form and social links
+│   │   ├── Experience.tsx  # Interactive timeline for professional work
+│   │   ├── Projects.tsx    # Showcase of projects with card zoom and links
+│   │   ├── Skills.tsx      # Technology badges categorized list
+│   │   ├── Navbar.tsx      # Dynamic header navigation
+│   │   ├── Loader.tsx      # Premium loading progress bar overlay
+│   │   └── Footer.tsx      # Footer section
+│   ├── App.tsx             # Main entry application container
+│   ├── main.tsx            # React application mounting file
+│   └── index.css           # Tailwind CSS imports & global design tokens
+├── package.json            # Scripts, dependencies, and configuration
+├── tsconfig.json           # TypeScript compilation configurations
+└── vite.config.ts          # Vite build environment configuration
+```
+
+---
+
+## 🌐 Deployment
+
+This application is ready to deploy on any hosting provider. Since it is a Single Page Application (SPA), you can host it easily on:
+- **Vercel** (Automatic zero-config deployment)
+- **Netlify**
+- **GitHub Pages** (Requires routing configuration if multi-page routing is added later)
+
+For quick deployment using Vercel CLI:
+```bash
+npm i -g vercel
+vercel
+```
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License. Feel free to use and customize it to make your own interactive portfolio!
